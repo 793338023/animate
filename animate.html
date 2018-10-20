@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#oo{
+		width: 20px;
+		height: 20px;
+		border:1px solid #000;
+		position: absolute;
+		top: 10px;
+		left: 0;
+	}
+	</style>
+</head>
+<body>
+<div id="oo"></div>	
+
+<script src="tAnimate.js"></script>
+<script>
+
+
+var oEl = document.querySelector('#oo');
+var anmimate = new Animator({
+	targetVal:100,
+	curVal:100,
+	step:0.6,
+	point:2,
+	easeType:'Quad-easeInOut',
+	update:function(val){
+		oEl.style.left = val + 'px';
+	},
+	complete:function(){
+		console.log('complete...');
+	}
+});
+
+
+</script>	
+</body>
+</html>
